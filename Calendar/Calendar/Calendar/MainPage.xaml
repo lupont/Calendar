@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calendar"
+             x:Class="Calendar.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="BtnPreviousDay" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Text="&lt;"
+                Clicked="BtnPreviousDay_Clicked"/>
+        <DatePicker x:Name="DprDate" 
+                    Grid.Row="0" 
+                    Grid.Column="1"
+                    PropertyChanged="HandleDateChanged"/>
+        <Button x:Name="BtnNextDay" 
+                Grid.Row="0" 
+                Grid.Column="2" 
+                Text="&gt;"
+                Clicked="BtnNextDay_Clicked"/>
+
+        <ScrollView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <StackLayout x:Name="StlHours">
+                <Label x:Name="LblDate"/>
+                <Label x:Name="LblTime"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
